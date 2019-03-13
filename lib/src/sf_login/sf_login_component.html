@@ -1,0 +1,7 @@
+<h1>Salesforce login</h1>
+
+<material-select label="Instance" class="bordered-list">
+    <material-select-item (trigger)="instanceSelection = 'sandbox'" [selected]="instanceSelection == 'sandbox'">Sandbox</material-select-item>
+    <material-select-item (trigger)="instanceSelection = 'prod'" [selected]="instanceSelection == 'prod'">Poduction</material-select-item>
+</material-select>
+<material-button raised (click)="navigateToSFLogin()">Login to Salesforce</material-button>
