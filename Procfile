@@ -1,1 +1,1 @@
-web: "webdev serve"
+web: 
