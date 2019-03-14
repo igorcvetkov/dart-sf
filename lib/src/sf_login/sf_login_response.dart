@@ -13,8 +13,16 @@ class SfLoginResponse{
     if(base.hasFragment && base.fragment.contains("access_token")){
       String fragment = Uri.decodeComponent(base.fragment);
       List<String> responseData = fragment.split("&");
-      _mapResponseData(responseData);
+      Map<String, String> responseDataMap = Map.fromIterable(responseData, 
+        key: (item) => item.toString().split("=")[0],
+        value: (item) => item.toString().split("=")[1],
+      );
+      _mapResponseData(responseDataMap);
     }
+  }
+
+  SfLoginResponse.fromQueryParameters(Map<String, String> queryParams){
+    _mapResponseData(queryParams);
   }
 
   bool isValid(){
@@ -36,19 +44,14 @@ class SfLoginResponse{
     return null;
   }
 
-  void _mapResponseData(List<String> responseData){
-    Map<String, String> responseDataMap = Map.fromIterable(responseData, 
-      key: (item) => item.toString().split("=")[0],
-      value: (item) => item.toString().split("=")[1],
-    );
-
-    this.accessToken = responseDataMap['access_token'];
-    this.instanceUrl = responseDataMap['instance_url'];
-    this.id = responseDataMap['id'];
-    this.issuedAt = responseDataMap['issued_at'];
-    this.signature = responseDataMap['signature'];
-    this.scope = responseDataMap['scope'];
-    this.tokenType = responseDataMap['token_type'];
+  void _mapResponseData(Map<String, String> responseData){
+    this.accessToken = responseData['access_token'];
+    this.instanceUrl = responseData['instance_url'];
+    this.id = responseData['id'];
+    this.issuedAt = responseData['issued_at'];
+    this.signature = responseData['signature'];
+    this.scope = responseData['scope'];
+    this.tokenType = responseData['token_type'];
   }
 
 
