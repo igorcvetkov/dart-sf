@@ -50,7 +50,7 @@ class SfLoginRequest{
 
   String _getEncodedUri(){
     var sourceUri = this._redirectUri;
-    var encodedUri = Uri.encodeFull(sourceUri);
+    var encodedUri = Uri.encodeComponent(sourceUri);
     return encodedUri;
   }
 }

@@ -27,10 +27,7 @@ class AppComponent implements OnInit{
 
   @override
   void ngOnInit() {
-    SfIdentity sfIdentity = SfLoginResponse.fromUri(Uri.base).initIdentity();
-    if(sfIdentity != null){
-       goAuthorizedView();
-    }
+    
   }
   
   Future<NavigationResult> goAuthorizedView(){

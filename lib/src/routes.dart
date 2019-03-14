@@ -26,6 +26,6 @@ class Routes {
   static final all = <RouteDefinition>[
     sfLogin,
     sfLoginCallback,
-    authorizedView,
+    authorizedView
   ];
 }
