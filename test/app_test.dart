@@ -5,8 +5,7 @@ import 'package:ang/app_component.dart';
 import 'package:ang/app_component.template.dart' as ng;
 
 void main() {
-  final testBed =
-      NgTestBed.forComponent<AppComponent>(ng.AppComponentNgFactory);
+  final testBed = NgTestBed.forComponent<AppComponent>(ng.AppComponentNgFactory);
   NgTestFixture<AppComponent> fixture;
 
   setUp(() async {
@@ -16,7 +15,7 @@ void main() {
   tearDown(disposeAnyRunningTest);
 
   test('heading', () {
-    //expect(fixture.text, contains('My First AngularDart App'));
+    expect(fixture.text, contains('My First AngularDart App'));
   });
 
   // Testing info: https://webdev.dartlang.org/angular/guide/testing

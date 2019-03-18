@@ -44,12 +44,14 @@ class SfLoginRequest{
     if(this._forceLoginPage){
       loginUrl += "&prompt=login%20consent";
     }
+    var asd = Uri.base;
 
     return loginUrl;
   }
 
   String _getEncodedUri(){
-    var sourceUri = this._redirectUri;
+    
+    var sourceUri = Uri.base.origin+'/logincallback.html';
     var encodedUri = Uri.encodeComponent(sourceUri);
     return encodedUri;
   }
