@@ -1,8 +1,7 @@
 import 'package:angular_router/angular_router.dart';
 
-import 'route_paths.template.dart';
+import 'package:ang/src/routing/route_paths.dart';
 import 'package:ang/src/sf_login/sf_login_component.template.dart' as sf_login_template;
-//import 'sf_login/sf_login_component.template.dart' as sf_login_template;
 import 'package:ang/src/sf_login/sf_login_callback_component.template.dart' as sf_login_callback_template;
 import 'package:ang/src/todo_list/todo_list_component.template.dart' as todo_list_template;
 

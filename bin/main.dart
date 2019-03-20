@@ -11,7 +11,7 @@ void main() {
   var handler = createStaticHandler(pathToBuild, defaultDocument: 'index.html');
 
   var portEnv = Platform.environment['PORT'];
-  var port = portEnv == null ? 9999 : int.parse(portEnv);
+  var port = portEnv == null ? 8080 : int.parse(portEnv);
 
   runZoned(() {
     io.serve(handler, '0.0.0.0', port);
