@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:angular/angular.dart';
 
 import 'src/navigation/main_navigation_component.dart';

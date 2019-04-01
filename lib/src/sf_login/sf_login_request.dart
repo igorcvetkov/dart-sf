@@ -3,7 +3,7 @@ import 'dart:core';
 class SfLoginRequest{
   String _loginUrl;
   String _responseType;
-  String _redirectUri;
+  // String _redirectUri;
   String _clientId;
   bool _forceLoginPage = false;
 
@@ -20,10 +20,15 @@ class SfLoginRequest{
     return this;
   }
 
-  SfLoginRequest withRedirectToUrl(String url){
-    this._redirectUri =url;
-    return this;
-  }
+  // SfLoginRequest withRedirectToUrl(String url){
+  //   this._redirectUri =url;
+  //   return this;
+  // }
+  
+  // SfLoginRequest withDefaultRedirectToUrl(){
+  //   this._redirectUri = Uri.base.origin+'/logincallback.html';
+  //   return this;
+  // }
 
   SfLoginRequest usingClientId(String id){
     this._clientId = id;
@@ -44,7 +49,6 @@ class SfLoginRequest{
     if(this._forceLoginPage){
       loginUrl += "&prompt=login%20consent";
     }
-    var asd = Uri.base;
 
     return loginUrl;
   }
