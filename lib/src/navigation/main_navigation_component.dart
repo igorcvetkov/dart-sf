@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:ang/src/routing/route_paths.dart';
@@ -21,4 +23,15 @@ import 'package:angular_components/material_icon/material_icon.dart';
   ],
   exports: [RoutePaths, Routes],
 )
-class MainNavigationComponent {}
+class MainNavigationComponent {
+  var toggleSidebarState = true;
+
+  final _toggleSidebar = StreamController<bool>();
+  @Output()
+  Stream<bool> get toggleSidebar => _toggleSidebar.stream;
+  
+  handleSidebarToggle(){
+    this.toggleSidebarState = !this.toggleSidebarState;
+    this._toggleSidebar.add(this.toggleSidebarState);
+  }
+}
