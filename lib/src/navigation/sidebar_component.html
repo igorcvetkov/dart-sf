@@ -1,31 +1,29 @@
-<material-drawer permanent>
-    <material-list >
-        <!-- Position the start of the drawer content correctly -->
-        <div group class="mat-drawer-spacer"></div>
-        <!-- Here is a group without a label -->
-        <div group>
-            <material-list-item>
-                <material-icon icon="star"></material-icon>Item 1
-            </material-list-item>
-            <material-list-item>
-                <material-icon icon="star"></material-icon>Item 2
-            </material-list-item>
-            <material-list-item>
-                <material-icon icon="star"></material-icon>Item 3
-            </material-list-item>
-            <material-list-item>
-                <material-icon icon="star"></material-icon>Item 4
-            </material-list-item>
-            <material-list-item>
-                <material-icon icon="star"></material-icon>Item 5
-            </material-list-item>
-        </div>
-        <!-- This group has a label -->
-        <div group>
-            <div label>Tags</div>
-            <material-list-item>
-                <material-icon icon="star"></material-icon>Favorites
-            </material-list-item>
-        </div>
-    </material-list>
-</material-drawer>
+<material-list >
+    <!-- Position the start of the drawer content correctly -->
+    <div group class="mat-drawer-spacer"></div>
+    <!-- Here is a group without a label -->
+    <div group>
+        <material-list-item [routerLink]="RoutePaths.apexClassManagement.toUrl()">
+            <material-icon icon="star"></material-icon>Classes
+        </material-list-item>
+        <material-list-item disabled>
+            <material-icon icon="star"></material-icon>Objects
+        </material-list-item>
+        <material-list-item disabled>
+            <material-icon icon="star"></material-icon>Triggers
+        </material-list-item>
+        <material-list-item disabled>
+            <material-icon icon="star"></material-icon>Aura Components
+        </material-list-item>
+        <material-list-item disabled>
+            <material-icon icon="star"></material-icon>Web Components
+        </material-list-item>
+    </div>
+    <!-- This group has a label -->
+    <!-- <div group>
+        <div label>Tags</div>
+        <material-list-item>
+            <material-icon icon="star"></material-icon>Favorites
+        </material-list-item>
+    </div> -->
+</material-list>

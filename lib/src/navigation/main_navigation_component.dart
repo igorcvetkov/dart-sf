@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:ang/src/routing/route_paths.dart';
-import 'package:ang/src/routing/routes.dart';
+//import 'package:ang/src/routing/routes.dart';
 
 import 'package:angular_components/material_button/material_button.dart';
 import 'package:angular_components/material_icon/material_icon.dart';
@@ -20,7 +20,7 @@ import 'package:angular_components/material_icon/material_icon.dart';
     'main_navigation_component.scss.css',
     'package:angular_components/app_layout/layout.scss.css',
   ],
-  exports: [RoutePaths, Routes],
+  exports: [RoutePaths],
 )
 class MainNavigationComponent {
   var toggleSidebarState = true;

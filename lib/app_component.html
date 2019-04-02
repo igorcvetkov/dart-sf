@@ -1,3 +1,11 @@
-<sidebar #sidebar ></sidebar>
-<main-navigation (toggleSidebar)="handleSidebarToggle"></main-navigation>
-<footer>AngularDart App For Connection with SalesForce</footer>
+
+<material-drawer persistent #drawer="drawer" >
+    <sidebar *deferredContent></sidebar> 
+</material-drawer>
+<material-content>
+    <main-navigation (toggleSidebar)="drawer.toggle()"></main-navigation>
+    <router-outlet [routes]="Routes.all"></router-outlet> 
+    <footer>AngularDart App For Connection with SalesForce</footer>
+</material-content>
+
+
